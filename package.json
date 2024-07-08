@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./config/server.js"
+    "dev": "node ./config/server.js"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "keywords": [],
   "author": "",
