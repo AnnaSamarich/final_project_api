@@ -13,7 +13,7 @@ const trainingSchema = Schema(
       required: true,
     },
     date: {
-      type: String,
+      type: Date,
       required: true,
     },
     duration: {
@@ -39,7 +39,7 @@ const trainingSchema = Schema(
 const trainingJoiSchema = Joi.object({
   direction: Joi.string().min(2).max(30).required(),
   level: Joi.string().min(2).max(30).required(),
-  date: Joi.string().min(2).max(30).required(),
+  date: Joi.date().min(2).max(30).required(),
   duration: Joi.string().min(2).max(30).required(),
   duration: Joi.string().min(2).max(30).required(),
   coach: Joi.array().items(Joi.string().hex().length(24)),
