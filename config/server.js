@@ -2,9 +2,9 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const { app } = require("../app");
 
-const { M_SPORTSMANNAME, M_PASSWORD, M_PARAMS, M_DB, PORT } = process.env;
+const { M_NAME, M_PASSWORD, M_PARAMS, M_DB, PORT } = process.env;
 
-const M_STR = `mongodb+srv://${M_SPORTSMANNAME}:${M_PASSWORD}@${M_PARAMS}/${M_DB}`;
+const M_STR = `mongodb+srv://${M_NAME}:${M_PASSWORD}@${M_PARAMS}/${M_DB}`;
 
 mongoose
   .connect(M_STR)
