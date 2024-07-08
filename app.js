@@ -1,12 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
+const logger = require("morgan");
 const { sportsmanRouter, trainingRouter } = require("./controllers");
 const nodemailer = require("nodemailer");
 const handlebars = require("handlebars");
 const fs = require("fs").promises;
 
 const app = express();
+const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
+app.use(logger(formatsLogger));
 app.use(express.json());
 app.use(morgan("dev"));
 
